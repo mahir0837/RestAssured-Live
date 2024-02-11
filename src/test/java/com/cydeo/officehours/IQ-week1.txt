@@ -1,0 +1,98 @@
+Interview Prep Questions
+
+- What is API ?
+
+    - It refers Application Programing interface which is small piece of code
+       that helps to communicate and share information between application
+
+    EX -> Google MAPs API, Accuweather API, News API etc...
+
+- What do you have in the request and response ?
+
+    REQUEST
+        - BaseURL
+        - Endpoint
+        - Parameters -> (Path / Query )
+        - Headers -> ( Accept - application/json | ContentType | Authorization  )
+        - Body / Payload ( POST - PUT - PATCH )
+    RESPONSE
+        - Status Code
+        - BODY - PAYLOAD
+        - Headers
+
+
+- When you start working on API project, what documents do you need from team ?
+
+     - Documentation is crucial part of API Testing
+     - I need API documentation to test service well
+     - It includes
+            - HTTP Methods
+            - BaseURI
+            - Parameters --> Path/Query
+            - Endpoint
+            - Authorization
+            - Headers (Accept / Content Type )
+
+- What is SWAGGER and How to use it ?
+
+       - It is a documentation to give information about API Usages with all details
+       - Additionally we can send a request from SWAGGER to test API MANUALLY
+       - How to send ?
+
+
+- How do you do API Testing without SWAGGER ?
+
+        - Try to ask your team (PO/Testers/Devs) to retrieve information about API doc
+            - json / yaml file to import into postman
+        - Knowledge Transfer
+        - UI --> Inspect --> Network --> FETCH/XHR --> Refresh the page
+            -> Right Click -> Copy As CURL -> Import into POSTMAN
+        - Check logs to see which requests are used in log history
+
+- What tools do you use for API Testing ?
+
+        - MANUAL     --> Postman
+        - AUTOMATION --> Rest Assured
+
+- What is the difference between Path Parameters and Query Parameters ?
+
+        Path Param : It is a part of URL /endpoint/{id}
+                    -> It returns single set of data from list of resources
+
+                    SELECT * FROM users
+                    where id =1;
+
+        Query Param: It is not part of URL - Filter
+                    -> We have to provide key and value
+                    -> Comes after ?
+
+                    SELECT * FROM users
+                    where firstName  like '%c%' and gender='Male';
+
+- If you want JSON format from API which request header you use and what is the value for header?
+
+         - given().accept("application/json")...........
+
+
+- What is the difference between Header and Body ?
+
+        - HEADERS --> Metadata about Request or Response
+            -> Accept
+            -> Authorization
+            -> Some Custom Header ( auth )
+        - BODY
+            -> Request  --> Data that we want to send API
+            -> Response --> Data that we want to retrieve
+
+- What are the HTTP methods have you used in your tests?
+
+        - GET       --> Retrieve Data    --> READ
+        - POST      --> Create Data      --> CREATE
+        - PUT/PATCH --> Update Date      --> UPDATE
+        - DELETE    --> Delete Data      --> DELETE
+
+        - OPTIONS   --> Gives available methods for related endpoint
+        - HEAD      --> Header info about related endpoint
+
+
+

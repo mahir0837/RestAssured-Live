@@ -1,0 +1,110 @@
+-- Which testing framework u used so far ?
+
+ -> UI
+    -> TestNG
+        -> DDT --> Data Driven Test -> Doing same test against different set of data
+        -> Data Provider
+        -> SoftAssert Class to make soft assertion
+
+
+    -> Cucumber-Junit
+        -> DDT --> Data Driven Test
+               --> Scenario Outlines
+
+        -> APACHE POI
+               --> External Library that helps to read data from excel files
+
+        -> @Test
+               --> 100 book id
+               -->
+
+               @Scenario Outlines: .................
+               Given librarian login app
+               When Librarian click Users
+               And Delete "<id>" from page
+               Then "User deleted" message should appear
+
+                @Examples
+                |row |
+                | 1  |
+
+ -> DB
+        -> JUnit5 -> @Test
+        -> Cucumber-Junit
+            -> DDT --> Data Driven Test
+            --> Scenario Outlines
+
+ -> API
+         -> JUnit5
+            -> @Test
+            -> @DisplayName
+            -> @ParameterizedTest
+            -> assertAll --> SoftAssertions
+
+         -> Cucumber-Junit
+            -> DDT --> Data Driven Test
+            -> Scenario Outlines
+
+
+-- What are the steps to do API Testing ?
+    1 - Read documentation to understand which endpoint we gonna use
+        -> api/spartans
+    2 - Manual Testing
+        -> Postman --> Manual / Also Postman is tool for automating API as well
+    3 - Automate Test Case
+        -> Rest Assured
+
+
+Fruit API
+    - Doc --> https://api.predic8.de/api-docs/ui/fruit-shop-api-v2-0-0
+    - Base URL --> https://api.predic8.de/shop/v2/
+
+
+BORED API
+     - Doc --> https://www.boredapi.com/documentation
+     - Base URL --> http://www.boredapi.com/api
+
+
+
+------------PATH --------
+     /**
+          *1- Given accept type is Json
+          *2- Path Parameters value is
+          *     - id —> 4
+          *3- When user sends GET request to /products/{id}
+          *4- Verify followings
+          *     - Status code should be 200
+          *     - Content Type is application/json
+          *     - Print response
+          *     - id is 4
+          *     - Name is "Coconut"
+          *     - Vendor name is "True Fruits Inc."
+          */
+
+
+------------QUERY --------
+/**
+     *1- Given accept type is Json
+     *2- Query Parameters value is
+     *     - start —> 1
+     *     - limit —> 100
+     *     - search —> "Fruit"
+     *3- When user sends GET request to /products
+     *4- Verify followings
+     *     - Status code should be 200
+     *     - Content Type is application/json
+     *     - start and limit values are matching with query params
+     *     - Product Names contains Fruit
+     *     - Get all product names
+     *     - Get product ids
+     *
+     */
+
+**------ PRACTICE APIs ---------**
+
+
+ChuckNorris --> https://api.chucknorris.io/
+Game of Thrones --> https://thronesapi.com/swagger/index.html?urls.primaryName=Game%20of%20Thrones%20API%20v2
+Breaking Bad --> https://breakingbadquotes.xyz/
+RickAndMorty --> https://rickandmortyapi.com/documentation/#rest
+FootballData --> https://www.football-data.org/documenta

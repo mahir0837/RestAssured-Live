@@ -56,11 +56,32 @@ public class P03_Deserialization extends FakeStoreTestBase {
         //GET ALL DATA WITH RESPONSE
 
         List<Map<String,Object>> allData = response.as(List.class);
-        System.out.println(allData);
+//        System.out.println(allData);
 
         //JSONPATH
         JsonPath jp = response.jsonPath();
         List<Map<String,Object>> jsonAllData = jp.getList("");
-        System.out.println("jsonAllData = " + jsonAllData);
+//        System.out.println("jsonAllData = " + jsonAllData);
+
+        //PARTIAL BODY JSON PATH
+        Map<String,Object>firstMap=jp.getMap("[0]");
+//        System.out.println("firstMap : "+firstMap);
+
+        //* System.out.println("====== GET ALL PRODUCTS ======");
+        //     * System.out.println("====== GET SECOND PRODUCTS ======");
+        //     * System.out.println("====== GET SECOND PRODUCTS PRICE ======");
+        System.out.println("jsonAllData.get(1).get(\"price\") = " + jsonAllData.get(1).get("price"));
+        //     * System.out.println("====== GET SECOND PRODUCTS IMAGES ======");
+        List<List<String>> images = jp.getList("images");
+        System.out.println("images = " + images.get(1));
+
+        //     * System.out.println("====== GET SECOND PRODUCTS FIRST IMAGE ======");
+        System.out.println("images.get(0) = " + images.get(1).get(0));
+        //     * System.out.println("====== GET SECOND PRODUCTS CATEGORY ======");
+        List<Map<String,Object>> categoryList = jp.getList("category");
+        System.out.println("categoryList.get(1) = " + categoryList.get(1));
+        //     * System.out.println("====== GET SECOND PRODUCTS CATEGORY NAME ======");
+        System.out.println("categoryList.get(1).get(1) = " + categoryList.get(1).get("name"));
+        //     */
     }
 }

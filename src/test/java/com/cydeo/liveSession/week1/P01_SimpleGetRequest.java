@@ -2,10 +2,12 @@ package com.cydeo.liveSession.week1;
 
 
 import com.cydeo.utility.HrTestBase;
+import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.*;
+import static org.hamcrest.Matchers.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 public class P01_SimpleGetRequest extends HrTestBase {
